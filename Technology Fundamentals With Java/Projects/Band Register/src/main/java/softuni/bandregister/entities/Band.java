@@ -1,0 +1,68 @@
+package softuni.bandregister.entities;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "bands")
+public class Band {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private String members;
+
+    @Column(nullable = false)
+    private double honorarium;
+
+    @Column(nullable = false)
+    private String genre;
+
+    public Band() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMembers() {
+        return members;
+    }
+
+    public void setMembers(String members) {
+        this.members = members;
+    }
+
+    public double getHonorarium() {
+        return honorarium;
+    }
+
+    public void setHonorarium(double honorarium) {
+        this.honorarium = honorarium;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+}
