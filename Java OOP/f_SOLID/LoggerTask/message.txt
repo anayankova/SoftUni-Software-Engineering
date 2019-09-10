@@ -1,0 +1,9 @@
+> Server Started on Port: 21
+> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> New Client: 127.0.0.1
+<log>
+   <date>9/10/2019</date>
+   <level>INFO</level>
+   <message>Hello from Socket</message>
+</log>
+
