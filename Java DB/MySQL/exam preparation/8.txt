@@ -1,0 +1,8 @@
+SELECT CONCAT(first_name, ' ', last_name), started_on,
+COUNT(ec.client_id) AS cnt
+FROM employees AS emp
+LEFT JOIN employees_clients AS ec
+ON ec.employee_id = emp.id
+GROUP BY ec.employee_id
+ORDER BY cnt DESC, emp.id ASC
+LIMIT 5;

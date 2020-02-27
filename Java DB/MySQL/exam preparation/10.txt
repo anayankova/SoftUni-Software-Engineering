@@ -1,0 +1,15 @@
+DELIMITER $$
+CREATE FUNCTION udf_client_cards_count(name_param VARCHAR(30))
+RETURNS INTEGER
+BEGIN
+
+   RETURN (SELECT COUNT(c.id) FROM cards AS c
+   LEFT JOIN bank_accounts AS ba
+   ON ba.id = c.bank_account_id
+   LEFT JOIN clients AS cl
+   ON cl.id = ba.client_id
+   WHERE cl.full_name = name_param);
+
+END $$
+
+SELECT udf_client_cards_count(...);

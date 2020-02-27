@@ -1,0 +1,10 @@
+DELETE p
+SELECT p.first_name, p.last_name, c.first_name, c.last_name
+FROM players AS p
+JOIN coaches AS c
+WHERE p.first_name = c.first_name AND p.last_name = c.last_name;
+
+DELETE p FROM players AS p
+LEFT JOIN players_coaches AS pc
+ON pc.player_id = p.id
+

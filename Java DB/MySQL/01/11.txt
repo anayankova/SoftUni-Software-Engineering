@@ -1,0 +1,50 @@
+CREATE TABLE `directors` (
+id INT PRIMARY KEY AUTO_INCREMENT,
+director_name VARCHAR(45) NOT NULL,
+notes TEXT NULL
+);
+CREATE TABLE `genres`  (
+id INT PRIMARY KEY AUTO_INCREMENT,
+genre_name VARCHAR(45) NOT NULL,
+notes TEXT NULL
+);
+CREATE TABLE `categories` (
+id INT PRIMARY KEY AUTO_INCREMENT,
+category_name VARCHAR(45) NOT NULL,
+notes TEXT NULL
+);
+CREATE TABLE `movies` (
+id INT PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(45) NOT NULL,
+director_id INT NOT NULL,
+copyright_year YEAR,
+length INT,
+genre_id INT NOT NULL,
+category_id INT NOT NULL,
+rating INT,
+notes TEXT
+);
+INSERT INTO `directors` (director_name)
+VALUES ('Sam Mendes'),
+ (' J.J. Abrams'),
+ ('Quentin Tarantino'),
+ ('Rian Johnson'),
+ ('Todd Phillips');
+INSERT INTO `genres` (genre_name)
+VALUES ('comedy'),
+ (' drama'),
+ ('action'),
+ ('fantasy'),
+ ('adventure');
+INSERT INTO `categories` (category_name)
+VALUES ('family'),
+ (' children_friendly'),
+ ('adults_only'),
+ ('idontknow'),
+ ('other');
+INSERT INTO `movies` (title, director_id, copyright_year, length, genre_id, category_id)
+VALUES (1917, 6, 2019, 120, 2, 3),
+ ('Star Wars: The Rise Of Skywalker', 7, 2019, 142, 3, 1),
+ ('Once Upon a Time... in Hollywood', 8, 2019, 120, 2, 3),
+ ('Joker', 9, 2019, 122, 2, 3),
+ ('Knives Out', 10, 2019, 131, 1, 1);

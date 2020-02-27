@@ -1,0 +1,18 @@
+DELIMITER $$
+CREATE FUNCTION udf_stadium_players_count(stadium_name VARCHAR(30))
+RETURNS INTEGER
+DETERMINISTIC
+BEGIN
+
+   RETURN (SELECT COUNT(s.name)
+           FROM players AS p
+           LEFT JOIN teams AS t
+           ON p.team_id = t.id
+           LEFT JOIN stadiums AS s
+           ON t.stadium_id = s.id
+           WHERE s.name = stadium_name
+           GROUP BY s.name);
+
+END $$
+
+SELECT udf_client_cards_count(...);

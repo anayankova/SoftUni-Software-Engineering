@@ -1,0 +1,38 @@
+CREATE TABLE `towns` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`name` VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE `addresses` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`address_text` VARCHAR(255) NOT NULL,
+`town_id` INT,
+CONSTRAINT `fk_addresses_towns`
+FOREIGN KEY `addresses`(`town_id`)
+REFERENCES `towns`(`id`)
+);
+
+CREATE TABLE `departments` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`name` VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE `employees` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`first_name` VARCHAR(45),
+`middle_name` VARCHAR(45),
+`last_name` VARCHAR(45),
+`job_title` VARCHAR(45),
+`department_id` INT,
+`hire_date` DATE,
+`salary` DECIMAL(10, 2),
+`address_id` INT,
+
+CONSTRAINT `fk_employees_departments`
+FOREIGN KEY `employees`(`department_id`)
+REFERENCES `departments`(`id`),
+
+CONSTRAINT `fk_employees_addresses`
+FOREIGN KEY `employees`(`address_id`)
+REFERENCES `addresses`(`id`)
+);

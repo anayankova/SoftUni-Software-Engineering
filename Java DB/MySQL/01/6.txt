@@ -1,0 +1,18 @@
+CREATE TABLE `people` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`name` VARCHAR(200) NOT NULL,
+`picture` LONGBLOB,
+`height` DECIMAL(10, 2),
+`weight` DECIMAL(10, 2),
+`gender` VARCHAR(1) NOT NULL,
+`birthdate` DATE NOT NULL,
+`biography` VARCHAR(255)
+);
+
+INSERT INTO `people` (`id`, `name`, `height`, `weight`, `gender`, `birthdate`, `biography`) 
+VALUES 
+('1', 'ivan', '165.20', '53.20', 'm', '1991-03-20', 'born in Sofia'),
+('2', 'stefan', '165.20', '53.20', 'm', '1991-04-20', 'born in Paris'),
+('3', 'hristo', '165.20', '53.20', 'm', '1991-05-20', 'born in Plovdiv'),
+('4', 'maria', '165.20', '53.20', 'f', '1991-06-20', 'born in Varna'),
+('5', 'ana', '165.20', '53.20', 'f', '1991-07-20', 'born in Viena');

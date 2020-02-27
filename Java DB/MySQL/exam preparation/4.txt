@@ -1,0 +1,4 @@
+DELETE emp FROM employees AS emp
+LEFT JOIN employees_clients AS ec
+ON ec.employee_id = emp.id
+WHERE ec.client_id IS NULL

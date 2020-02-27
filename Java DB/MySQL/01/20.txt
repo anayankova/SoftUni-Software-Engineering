@@ -1,0 +1,3 @@
+update payments
+set tax_rate = tax_rate - tax_rate * 0.03;
+select tax_rate from payments

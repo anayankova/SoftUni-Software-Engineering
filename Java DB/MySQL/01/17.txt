@@ -1,0 +1,8 @@
+SELECT `id`, `name` FROM `towns`
+ORDER BY `name`;
+
+SELECT `id`, `name` FROM `departments`
+ORDER BY `name`;
+
+SELECT `id`, `first_name`, `middle_name`, `last_name`, `job_title`, `department_id`, `hire_date`, `salary`, `address_id` FROM `employees`
+ORDER BY `salary` DESC;

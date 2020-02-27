@@ -1,0 +1,12 @@
+SELECT c.name, IF(COUNT(c.name) = 1, 0, COUNT(c.name)), SUM(p.salary)
+FROM players AS p
+LEFT JOIN teams AS t
+ON p.team_id = t.id
+LEFT JOIN stadiums AS s
+ON t.stadium_id = s.id
+LEFT JOIN towns AS tt
+ON s.town_id = tt.id
+RIGHT JOIN countries AS c
+ON tt.country_id = c.id
+GROUP BY c.name
+ORDER BY COUNT(c.name) DESC, c.name;

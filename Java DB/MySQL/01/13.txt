@@ -1,0 +1,124 @@
+CREATE TABLE employees (
+
+id INT AUTO_INCREMENT, first_name VARCHAR(30) NOT NULL, last_name VARCHAR(30) NOT NULL,
+
+title VARCHAR(25) NOT NULL, notes VARCHAR(255), PRIMARY KEY (id));
+
+ 
+
+CREATE TABLE customers (
+
+account_number INT AUTO_INCREMENT, first_name VARCHAR(30) NOT NULL, last_name VARCHAR(30) NOT NULL,
+
+phone_number VARCHAR(30) NOT NULL, emergency_name VARCHAR(55) NOT NULL, emergency_number VARCHAR(30) NOT NULL,
+
+notes VARCHAR(255), PRIMARY KEY (account_number));
+
+ 
+
+CREATE TABLE room_status (
+
+room_status INT NOT NULL, notes VARCHAR(255), PRIMARY KEY (room_status));
+
+ 
+
+CREATE TABLE room_types (
+
+room_type INT NOT NULL, notes VARCHAR(255), PRIMARY KEY (room_type));
+
+ 
+
+CREATE TABLE bed_types (
+
+bed_type INT NOT NULL, notes VARCHAR(255), PRIMARY KEY (bed_type));
+
+ 
+
+CREATE TABLE rooms (
+
+room_number INT NOT NULL, room_type INT, bed_type INT, rate DOUBLE NOT NULL,
+
+room_status INT, notes VARCHAR(255), PRIMARY KEY (room_number));
+
+ 
+
+CREATE TABLE payments (
+
+id INT AUTO_INCREMENT, employee_id INT, payment_date DATE, account_number INT, first_date_occupied DATE,
+
+last_date_occupied DATE, total_days INT NOT NULL, amount_charged DOUBLE NOT NULL, tax_rate INT,
+
+tax_amount DOUBLE NOT NULL, payment_total DOUBLE NOT NULL, notes VARCHAR(255), PRIMARY KEY (id));
+
+ 
+
+CREATE TABLE occupancies (
+
+id INT AUTO_INCREMENT, employee_id INT, date_occupied DATE,
+
+account_number INT, room_number INT, rate_applied DOUBLE NOT NULL, phone_charge DOUBLE,
+
+notes VARCHAR(255), PRIMARY KEY (id));
+
+ 
+
+INSERT INTO employees (first_name, last_name, title, notes)
+
+VALUES ('Joro', 'Servitiorcheto', 'waiter', 'none'), ('Mira', 'Kamerierkata', 'chambermaid', 'none'),
+
+('Kiro', 'Managera', 'manager', 'none');
+
+ 
+
+INSERT INTO customers (first_name, last_name, phone_number, emergency_name, emergency_number, notes)
+
+VALUES ('Pesho', 'Bogatasha', '08888888', 'Chichoto', '0988877777', 'no'),
+
+('Maca', 'Lesnata', '08888888789', 'Chinkata', '098887777754', 'no'),
+
+('Iva', 'Obshtata', '08888888444', 'Lyubovnika', '098887777711', 'no');
+
+ 
+
+INSERT INTO room_status (room_status, notes)
+
+VALUES (1, 'no'), (2, 'no'), (3, 'no');
+
+ 
+
+INSERT INTO room_types (room_type, notes)
+
+VALUES (1, 'no'), (2, 'no'), (3, 'no');
+
+ 
+
+INSERT INTO bed_types (bed_type, notes)
+
+VALUES (1, 'none'), (2, 'none'), (3, 'none');
+
+ 
+
+INSERT INTO rooms (room_number, room_type, bed_type, rate, room_status, notes)
+
+VALUES (101, 1, 1, 115.0, 1, 'none'), (201, 2, 2, 215.0, 2, 'none'), (301, 3, 3, 315.0, 3, 'none');
+
+ 
+
+INSERT INTO payments (employee_id, payment_date, account_number, first_date_occupied,
+
+last_date_occupied, total_days, amount_charged, tax_rate, tax_amount, payment_total, notes)
+
+VALUES (2, '2020-01-09', 1, '2020-01-07', '2020-01-09', 2, 215.0, 2, 5.0, 440.0, 'none'),
+
+(1, '2020-01-08', 1, '2020-01-07', '2020-01-08', 1, 115.0, 1, 5.0, 120.0, 'none'),
+
+(3, '2020-01-11', 1, '2020-01-07', '2020-01-11', 4, 315.0, 1, 20.0, 1280.0, 'none');
+
+ 
+
+INSERT INTO occupancies (employee_id, date_occupied, account_number, room_number, rate_applied, phone_charge, notes)
+
+VALUES (1, '2020-01-09', 1, 101, 115.0, 5.0, 'none'), (2, '2020-01-08', 2, 201, 215.0, 15.0, 'none'),
+
+(3, '2020-01-10', 3, 301, 315.0, 35.0, 'none');
+

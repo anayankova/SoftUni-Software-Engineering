@@ -1,0 +1,2 @@
+SELECT distinct `salary` AS 'Salary'
+FROM `employees`;

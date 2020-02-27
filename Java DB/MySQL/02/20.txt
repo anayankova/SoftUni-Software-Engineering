@@ -1,0 +1,13 @@
+update employees
+set salary = salary + salary * 0.12
+where `department_id` = 1;
+update employees
+set salary = salary + salary * 0.12
+where `department_id` = 2;
+update employees
+set salary = salary + salary * 0.12
+where `department_id` = 4;
+update employees
+set salary = salary + salary * 0.12
+where `department_id` = 11;
+select salary from employees

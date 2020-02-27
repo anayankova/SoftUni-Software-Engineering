@@ -1,0 +1,12 @@
+SELECT sd.speed, tt.name
+FROM skills_data AS sd
+LEFT JOIN players AS p
+ON p.skills_data_id = sd.id
+LEFT JOIN teams AS t
+ON p.team_id = t.id
+LEFT JOIN stadiums AS s
+ON t.stadium_id = s.id
+LEFT JOIN towns AS tt
+ON s.town_id = tt.id
+WHERE tt.name IS NOT NULL
+ORDER BY sd.speed DESC, tt.name;

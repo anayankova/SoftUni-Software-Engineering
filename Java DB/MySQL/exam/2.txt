@@ -1,0 +1,6 @@
+INSERT INTO coaches(first_name, last_name, salary, coach_level)
+(
+SELECT first_name, last_name, 2*salary, CHAR_LENGTH(first_name)
+FROM players
+WHERE age >= 45
+);
