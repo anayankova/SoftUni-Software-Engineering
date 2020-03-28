@@ -1,0 +1,2 @@
+AddGame|Starcraft|120.00|20|FqnKB22pOC0|https://static0.srcdn.com/wordpress/wp-content/uploads/2019/04/Starcraft-Anniversary-Art-Characters.jpg?q=50&fit=crop&w=960&h=500|StarCraft is a military science fiction media franchise created by Chris Metzen and James Phinney and owned by Blizzard Entertainment.|31-03-1998
+AddGame|Newgame|50.00|10.20|FqnKB22pOC0|https://newgame.com/images/image56522552|Newgame is interesting, funny, awesome and cool game.|01-01-2000
